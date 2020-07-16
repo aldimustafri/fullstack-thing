@@ -29,7 +29,6 @@ function App() {
   const [data, setData] = useState(initialX);
 
   const [value, setValue] = useState();
-  const [id, setId] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,20 +65,18 @@ function App() {
     setValue(value.map((item) => (item.id === id ? updatedCustomer : item)));
   };
 
-  async function handleDelete(event) {
-    event.preventDefault();
+  async function deleteCustomer(id) {
     const url = `http://localhost:5000/customer/delete/${id}`;
 
     try {
       const response = await Axios.delete(url);
       console.log(response);
-      // setValue()
+      setValue(value.filter((item) => item.id !== id));
     } catch (error) {
       console.log(error);
     }
   }
 
-  // console.log("value: ", id);
   return (
     <Fragment>
       <AddCustomer addCustomer={addCustomer} />
@@ -118,16 +115,14 @@ function App() {
                       Edit
                     </Button>
 
-                    <form onSubmit={handleDelete}>
-                      <Button
-                        variant="danger"
-                        value={item.id}
-                        onClick={(event) => setId(event.target.value)}
-                        type="submit"
-                      >
-                        Delete
-                      </Button>
-                    </form>
+                    <Button
+                      variant="danger"
+                      value={item.id}
+                      onClick={() => deleteCustomer(item.id)}
+                      type="submit"
+                    >
+                      Delete
+                    </Button>
                   </td>
                 </tr>
               ))}
