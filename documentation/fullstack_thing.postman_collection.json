@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "b68f0f95-64f0-45df-80b2-98d97469a4c2",
+		"name": "fullstack_thing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Aldi Mustafri",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aldimustafri@live.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aldi123",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "men",
+							"type": "text"
+						},
+						{
+							"key": "is_married",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "jakarta",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/customer/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"list"
+					]
+				},
+				"description": "Get All Customer Data List"
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name ",
+							"value": "tony",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "tony",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "tony@live.com",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "men",
+							"type": "text"
+						},
+						{
+							"key": "is_married",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jakarta",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/customer/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"add"
+					]
+				},
+				"description": "Add New Customer Data"
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Find ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name ",
+							"value": "tony",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "tonya",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "tony@live.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "men",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_married",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "bandung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/customer/[id]",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"[id]"
+					]
+				},
+				"description": "Find Customer by Id"
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name ",
+							"value": "tony",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "tony",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "tony@live.com",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "men",
+							"type": "text"
+						},
+						{
+							"key": "is_married",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jakarta",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/customer/update/[id]",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"update",
+						"[id]"
+					]
+				},
+				"description": "Update Customer Data"
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name ",
+							"value": "tony",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "31",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "tonya",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "tony@live.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "men",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "is_married",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "bandung",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "test",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/customer/delete/[id]",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"delete",
+						"[id]"
+					]
+				},
+				"description": "Delete Customer List"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
