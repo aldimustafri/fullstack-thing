@@ -54,7 +54,11 @@ function AddCustomer({ addCustomer }) {
 
   return (
     <Fragment>
-      <Button variant="primary" onClick={handleShow}>
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        style={{ marginBottom: "10px" }}
+      >
         Add Customer
       </Button>
 
@@ -71,6 +75,7 @@ function AddCustomer({ addCustomer }) {
                 type="name"
                 placeholder="Your name"
                 onChange={(event) => setName(event.target.value)}
+                required
               />
             </Form.Group>
 
@@ -80,6 +85,7 @@ function AddCustomer({ addCustomer }) {
                 type="email"
                 placeholder="Your email"
                 onChange={(event) => setEmail(event.target.value)}
+                required
               />
             </Form.Group>
 
@@ -89,6 +95,7 @@ function AddCustomer({ addCustomer }) {
                 type="password"
                 placeholder="Your password"
                 onChange={(event) => setPassword(event.target.value)}
+                required
               />
             </Form.Group>
 
@@ -122,6 +129,7 @@ function AddCustomer({ addCustomer }) {
                 as="textarea"
                 rows="3"
                 onChange={(event) => setAddress(event.target.value)}
+                required
               />
             </Form.Group>
 

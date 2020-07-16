@@ -7,9 +7,11 @@
  */
 import React, { useState, useEffect, Fragment } from "react";
 import Axios from "axios";
-import { Table, Button, Modal } from "react-bootstrap";
+import { Table, Button, Modal, Container, Row } from "react-bootstrap";
 import AddCustomer from "./components/AddCustomer";
 import EditCustomer from "./components/EditCustomer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -79,67 +81,73 @@ function App() {
 
   return (
     <Fragment>
-      <AddCustomer addCustomer={addCustomer} />
-      {value ? (
-        <div>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Gender</th>
-                <th>Marital Status</th>
-                <th>Address</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {value.map((item) => (
-                <tr key={item.id}>
-                  <td>1</td>
-                  <td>{item.name}</td>
-                  <td>{item.email}</td>
-                  <td>{item.password}</td>
-                  <td>{item.gender}</td>
-                  <td>{item.is_married == 0 ? "Single" : "Married"}</td>
-                  <td>{item.address}</td>
-                  <td>
-                    <Button
-                      variant="warning"
-                      onClick={() => {
-                        editCustomer(item);
-                      }}
-                    >
-                      Edit
-                    </Button>
-
-                    <Button
-                      variant="danger"
-                      value={item.id}
-                      onClick={() => deleteCustomer(item.id)}
-                      type="submit"
-                    >
-                      Delete
-                    </Button>
-                  </td>
+      <Header />
+      <div className="col-md-12">
+        <AddCustomer addCustomer={addCustomer} />
+        {value ? (
+          <div className="table-responsive">
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Gender</th>
+                  <th>Marital Status</th>
+                  <th>Address</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
-      ) : (
-        <div></div>
-      )}
+              </thead>
+              <tbody>
+                {value.map((item) => (
+                  <tr key={item.id}>
+                    <td>1</td>
+                    <td>{item.name}</td>
+                    <td>{item.email}</td>
+                    <td>{item.password}</td>
+                    <td>{item.gender}</td>
+                    <td>{item.is_married == 0 ? "Single" : "Married"}</td>
+                    <td>{item.address}</td>
+                    <td>
+                      <Button
+                        style={{ margin: "2px" }}
+                        variant="warning"
+                        onClick={() => {
+                          editCustomer(item);
+                        }}
+                      >
+                        Edit
+                      </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <EditCustomer
-          onHide={handleClose}
-          data={data}
-          updateCustomer={updateCustomer}
-        />
-      </Modal>
+                      <Button
+                        style={{ margin: "2px" }}
+                        variant="danger"
+                        value={item.id}
+                        onClick={() => deleteCustomer(item.id)}
+                        type="submit"
+                      >
+                        Delete
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        <Modal show={show} onHide={handleClose}>
+          <EditCustomer
+            onHide={handleClose}
+            data={data}
+            updateCustomer={updateCustomer}
+          />
+        </Modal>
+      </div>
+      <Footer />
     </Fragment>
   );
 }
